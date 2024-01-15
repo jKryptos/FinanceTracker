@@ -12,16 +12,16 @@ public class Main {
         var userInput = scanner.nextLine();
         switch (userInput){
             case "1" :
-                loadFromFile();
+                DataStorage.loadFromFile();
                 break;
             case "2" :
-                saveToFile();
+                DataStorage.saveToFile();
                 break;
             case "3" :
-                reportCategory();
+                Category.reportCategory();
                 break;
             case "4" :
-                financeEditor();
+                Editor.financeEditor();
                 break;
             case "5" :
                 exitProgram();
@@ -30,29 +30,6 @@ public class Main {
                 programStart();
                 break;
         }
-    }
-    public static void loadFromFile(){
-        System.out.println("File Loaded");
-        programStart();
-    }
-    public static void saveToFile(){
-        System.out.println("Saved to file");
-        programStart();
-    }
-    public static void reportCategory(){
-        System.out.println("Which category would you like to view?");
-        System.out.println("1. Total In/Out\n2. Income\n3. Bills\n4. Food\n5. Entertainment\n6. Savings\n7. Junk\n8. Total Days of Spending\n9. Pecentage Breakdown");
-        programStart();
-    }
-    public static void financeEditor(){
-        System.out.println("Which category would you like to change?");
-        programStart();
-    }
-    public static void addFinancialData(){
-
-    }
-    public static void removeFinancialData(){
-
     }
     public static void exitProgram(){
         System.out.println("Goodbye!");
