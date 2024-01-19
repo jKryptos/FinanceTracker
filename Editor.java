@@ -1,15 +1,15 @@
 public class Editor {
 
-    static int totalDollarsIn;
-    static int totalDollarsOut;
-    static int income;
-    static int bills;
-    static int food;
-    static int entertainment;
-    static int savings;
-    static int junk;
+    static double totalDollarsIn;
+    static double totalDollarsOut;
+    static double income;
+    static double bills;
+    static double food;
+    static double entertainment;
+    static double savings;
+    static double junk;
     static int totalAmountOfTransactions;
-    static int percentageBreakdown;
+    static double percentageBreakdown;
 
 
     public static void financeEditor(){
