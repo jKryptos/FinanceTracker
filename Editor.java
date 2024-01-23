@@ -3,9 +3,6 @@ import java.util.Scanner;
 
 
 public class Editor {
-
-    static BigDecimal totalDollarsIn = BigDecimal.valueOf(0.00);
-    static BigDecimal totalDollarsOut = BigDecimal.valueOf(0.00);
     static BigDecimal income = BigDecimal.valueOf(0.00);
     static BigDecimal bills = BigDecimal.valueOf(0.00);
     static BigDecimal food = BigDecimal.valueOf(0.00);
@@ -16,6 +13,8 @@ public class Editor {
     static double percentageBreakdown;
     static int cents;
     static int dollars;
+    static BigDecimal totalDollarsIn = BigDecimal.valueOf(0.00);
+    static BigDecimal totalDollarsOut = BigDecimal.valueOf(0.00);
     static Scanner editorScanner = new Scanner(System.in);
     public static void financeEditor(){
         System.out.println("Which category would you like to change?");
@@ -50,8 +49,10 @@ public class Editor {
         switch(editorAddOrRemoveSelection){
             case 1:
                 addFinancialData(editorCategoryUserInput);
+                break;
             case 2:
                 removeFinancialData(editorCategoryUserInput);
+                break;
         }
         ProgramStart.programStart();
     }
@@ -62,31 +63,60 @@ public class Editor {
         switch(addFinancialDataChosenCategory){
             case 1:
                 income = income.add(addFinancialDataAmount);
-                System.out.println("Total Income: " + income);
+                System.out.println("Total Income: $" + income);
                 break;
             case 2:
                 bills = bills.add(addFinancialDataAmount);
-                System.out.println("Total Bills Paid: " + bills);
+                System.out.println("Total Bills Paid: $" + bills);
                 break;
             case 3:
                 food = food.add(addFinancialDataAmount);
-                System.out.println("Total Spent on Food: " + food);
+                System.out.println("Total Spent on Food: $" + food);
                 break;
             case 4:
                 entertainment = entertainment.add(addFinancialDataAmount);
-                System.out.println("Total Spent on Entertainment: " + entertainment);
+                System.out.println("Total Spent on Entertainment: $" + entertainment);
                 break;
             case 5:
                 savings = savings.add(addFinancialDataAmount);
-                System.out.println("Total Expected Savings: " + savings);
+                System.out.println("Total Expected Savings: $" + savings);
                 break;
             case 6:
                 junk = junk.add(addFinancialDataAmount);
-                System.out.println("Total WASTED on Junk: " + junk);
+                System.out.println("Total WASTED on Junk: $" + junk);
                 break;
         }
     }
     public static void removeFinancialData(int removeFinancialDataChosenCategory){
+        System.out.println("How much would you like to remove? FORMAT -> Dollars.Cents");
+        BigDecimal removeFinancialDataAmount = editorScanner.nextBigDecimal();
 
+        switch(removeFinancialDataChosenCategory){
+            case 1:
+                income = income.subtract(removeFinancialDataAmount);
+                System.out.println("Total Income: $" + income);
+                break;
+            case 2:
+                bills = bills.subtract(removeFinancialDataAmount);
+                System.out.println("Total Bills Paid: $" + bills);
+                break;
+            case 3:
+                food = food.subtract(removeFinancialDataAmount);
+                System.out.println("Total Spent on Food: $" + food);
+                break;
+            case 4:
+                entertainment = entertainment.subtract(removeFinancialDataAmount);
+                System.out.println("Total Spent on Entertainment: $" + entertainment);
+                break;
+            case 5:
+                savings = savings.subtract(removeFinancialDataAmount);
+                System.out.println("Total Expected Savings: $" + savings);
+                break;
+            case 6:
+                junk = junk.subtract(removeFinancialDataAmount);
+                System.out.println("Total WASTED on Junk: $" + junk);
+                break;
+        }
+        System.out.println("You have removed: $" + removeFinancialDataAmount + " from your records.");
     }
 }

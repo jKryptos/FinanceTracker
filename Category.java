@@ -15,6 +15,8 @@ public class Category {
     public static void categorySelector(int userInput){
         switch (userInput){
             case 1 :
+                Editor.totalDollarsIn = Editor.totalDollarsIn.add(Editor.income).add(Editor.savings);
+                Editor.totalDollarsOut = Editor.totalDollarsOut.add(Editor.bills).add(Editor.food).add(Editor.junk).add(Editor.entertainment);
                 System.out.println("Your in/out is: " + Editor.totalDollarsIn + " / " + Editor.totalDollarsOut);
                 break;
             case 2 :
