@@ -9,16 +9,16 @@ public class Editor {
     static BigDecimal entertainment = BigDecimal.valueOf(0.00);
     static BigDecimal savings = BigDecimal.valueOf(0.00);
     static BigDecimal junk = BigDecimal.valueOf(0.00);
+    static BigDecimal gas = BigDecimal.valueOf(0.00);
     static int totalAmountOfTransactions;
     static double percentageBreakdown;
     static int cents;
     static int dollars;
-    static BigDecimal totalDollarsIn = BigDecimal.valueOf(0.00);
     static BigDecimal totalDollarsOut = BigDecimal.valueOf(0.00);
     static Scanner editorScanner = new Scanner(System.in);
     public static void financeEditor(){
         System.out.println("Which category would you like to change?");
-        System.out.println("1. Income\n2. Bills\n3. Food\n4. Entertainment\n5. Savings\n6. Junk");
+        System.out.println("1. Income\n2. Bills\n3. Food\n4. Entertainment\n5. Savings\n6. Junk\n7. Gas");
         int editorCategoryUserInput = editorScanner.nextInt();
         switch(editorCategoryUserInput) {
             case 1:
@@ -39,6 +39,9 @@ public class Editor {
             case 6:
                 System.out.println("Junk");
                 break;
+            case 7:
+                System.out.println("Gas");
+                break;
             default:
                 System.out.println("Incorrect choice!");
                 financeEditor();
@@ -54,6 +57,8 @@ public class Editor {
                 removeFinancialData(editorCategoryUserInput);
                 break;
         }
+        totalDollarsOut = BigDecimal.valueOf(0.00);
+        totalDollarsOut = totalDollarsOut.add(junk).add(entertainment).add(bills).add(food).add(gas).add(savings);
         ProgramStart.programStart();
     }
     public static void addFinancialData(int addFinancialDataChosenCategory){
@@ -85,6 +90,10 @@ public class Editor {
                 junk = junk.add(addFinancialDataAmount);
                 System.out.println("Total WASTED on Junk: $" + junk);
                 break;
+            case 7:
+                gas = gas.add(addFinancialDataAmount);
+                System.out.println("Total spent on Gas: $" + gas);
+                break;
         }
     }
     public static void removeFinancialData(int removeFinancialDataChosenCategory){
@@ -115,6 +124,10 @@ public class Editor {
             case 6:
                 junk = junk.subtract(removeFinancialDataAmount);
                 System.out.println("Total WASTED on Junk: $" + junk);
+                break;
+            case 7:
+                gas = gas.add(removeFinancialDataAmount);
+                System.out.println("Total spent on Gas: $" + gas);
                 break;
         }
         System.out.println("You have removed: $" + removeFinancialDataAmount + " from your records.");

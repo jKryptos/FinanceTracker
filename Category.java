@@ -15,18 +15,18 @@ public class Category {
     public static void categorySelector(int userInput){
         switch (userInput){
             case 1 :
-                Editor.totalDollarsIn = Editor.totalDollarsIn.add(Editor.income).add(Editor.savings);
-                Editor.totalDollarsOut = Editor.totalDollarsOut.add(Editor.bills).add(Editor.food).add(Editor.junk).add(Editor.entertainment);
-                System.out.println("Your in/out is: " + Editor.totalDollarsIn + " / " + Editor.totalDollarsOut);
+                System.out.println("Your in/out is: " + Editor.income + " / " + Editor.totalDollarsOut);
+                System.out.println("Amount placed into Savings from TOTAL Out: " + Editor.savings);
+                System.out.println("You are currently +\\-: " + Editor.income.subtract(Editor.totalDollarsOut));
                 break;
             case 2 :
                 System.out.println("Your income is: " + Editor.income);
                 break;
             case 3 :
-                System.out.println("Sum of your bills: " + Editor.bills);
+                System.out.println("Sum of your recurring bills: " + Editor.bills);
                 break;
             case 4 :
-                System.out.println("Total amount you have spent on food: " +  Editor.food);
+                System.out.println("Total amount spent on food: " +  Editor.food);
                 break;
             case 5 :
                 System.out.println("Total amount spent on entertainment: " + Editor.entertainment);
@@ -38,9 +38,12 @@ public class Category {
                 System.out.println("Total money wasted on junk: " + Editor.junk);
                 break;
             case 8 :
-                System.out.println("Total days where spending has occurred: " + Editor.totalAmountOfTransactions);
+                System.out.println("Total amount spent on gas: " + Editor.gas);
                 break;
             case 9 :
+                System.out.println("Total days where spending has occurred: " + Editor.totalAmountOfTransactions);
+                break;
+            case 10 :
                 System.out.println("Pecentage breakdown of all categories: ");
                 break;
             default:
