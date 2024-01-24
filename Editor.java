@@ -16,6 +16,7 @@ public class Editor {
     static int dollars;
     static BigDecimal totalDollarsOut = BigDecimal.valueOf(0.00);
     static Scanner editorScanner = new Scanner(System.in);
+
     public static void financeEditor(){
         System.out.println("Which category would you like to change?");
         System.out.println("1. Income\n2. Bills\n3. Food\n4. Entertainment\n5. Savings\n6. Junk\n7. Gas");
@@ -47,6 +48,7 @@ public class Editor {
                 financeEditor();
                 break;
         }
+
         System.out.println("Add or Remove data?\n1. Add\n2. Remove");
         int editorAddOrRemoveSelection = editorScanner.nextInt();
         switch(editorAddOrRemoveSelection){
@@ -61,6 +63,7 @@ public class Editor {
         totalDollarsOut = totalDollarsOut.add(junk).add(entertainment).add(bills).add(food).add(gas).add(savings);
         ProgramStart.programStart();
     }
+
     public static void addFinancialData(int addFinancialDataChosenCategory){
         System.out.println("How much would you like to add? FORMAT -> Dollars.Cents");
         BigDecimal addFinancialDataAmount = editorScanner.nextBigDecimal();
@@ -96,6 +99,7 @@ public class Editor {
                 break;
         }
     }
+
     public static void removeFinancialData(int removeFinancialDataChosenCategory){
         System.out.println("How much would you like to remove? FORMAT -> Dollars.Cents");
         BigDecimal removeFinancialDataAmount = editorScanner.nextBigDecimal();

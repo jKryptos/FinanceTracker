@@ -12,6 +12,7 @@ public class Category {
         Main.whiteSpace(2);
         ProgramStart.programStart();
     }
+
     public static void categorySelector(int userInput){
         switch (userInput){
             case 1 :
