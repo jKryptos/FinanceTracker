@@ -12,8 +12,6 @@ public class Editor {
     static BigDecimal gas = BigDecimal.valueOf(0.00);
     static int totalAmountOfTransactions;
     static double percentageBreakdown;
-    static int cents;
-    static int dollars;
     static BigDecimal totalDollarsOut = BigDecimal.valueOf(0.00);
     static Scanner editorScanner = new Scanner(System.in);
 
